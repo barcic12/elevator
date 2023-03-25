@@ -1,7 +1,11 @@
 .controls {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
   background-color: green;
+  width: 200px;
+  height: 108px;
+  padding: 24px;
 }

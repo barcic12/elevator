@@ -1,6 +1,6 @@
-.app {
-  text-align: center;
+.building-container {
   display: flex;
   flex-direction: row;
+  text-align: center;
   margin: 24px auto;
 }

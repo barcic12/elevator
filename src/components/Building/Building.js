@@ -4,13 +4,14 @@ import Elevator from "./Elevator/Elevator";
 
 import "./Building.css";
 
-const Building = ({ numberOfFloors }) => {
+const Building = ({ numberOfFloors, numberOfElevators }) => {
   const floors = [...Array(Number(numberOfFloors)).keys()];
+  const elevators = [...Array(Number(numberOfElevators)).keys()];
 
   return (
     <div className="building">
-      {floors.map((i) => (
-        <Elevator key={i} />
+      {elevators.map((i) => (
+        <Elevator key={i} floors={floors} />
       ))}
     </div>
   );
