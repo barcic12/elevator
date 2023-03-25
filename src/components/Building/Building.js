@@ -13,9 +13,9 @@ const Building = ({ numberOfFloors, numberOfElevators, actualElevators }) => {
       {elevators.map((i) => (
         <Elevator
           key={i}
+          id={i}
           floors={floors}
           actualElevators={actualElevators}
-          id={i}
         />
       ))}
     </div>

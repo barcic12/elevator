@@ -8,8 +8,7 @@ import "./App.css";
 const App = () => {
   const [numberOfFloors, setNumberOfFloors] = useState(1);
   const [numberOfElevators, setNumberOfElevators] = useState(1);
-
-  const [actualElevators, setActualElevators] = useState([{ id: 0, floor: 0 }]);
+  const [actualElevators, setActualElevators] = useState([{ id: 0, floor: 0 }]); // The real elevators Im using
 
   useEffect(() => {
     const elevatorsToUse = [...Array(Number(numberOfElevators)).keys()].map(

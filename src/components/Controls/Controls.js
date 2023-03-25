@@ -8,7 +8,7 @@ const Controls = ({ numberOfFloors, setActualElevators, actualElevators }) => {
   const floors = [...Array(Number(numberOfFloors)).keys()];
 
   const handleCallElevator = (i) => {
-    setElevatorToUse(2); // call the closest elevator index
+    setElevatorToUse(2); // TODO- call the closest elevator index
 
     const elevatorsWithRemovedIndex = actualElevators.filter(
       (elevator) => elevator.id !== 2

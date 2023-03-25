@@ -7,7 +7,6 @@ import "./Elevator.css";
 const Elevator = ({ floors, actualElevators, id }) => {
   const elevatorFloor = actualElevators[id] && actualElevators[id].floor;
 
-  console.log(actualElevators);
   return (
     <ul className="elevator">
       {floors.map((i) => {
