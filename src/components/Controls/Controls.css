@@ -1,6 +1,7 @@
 .controls {
   display: flex;
   flex-direction: column;
+  border: 2px solid gray;
 }
 
 button {
@@ -8,4 +9,11 @@ button {
   width: 200px;
   height: 108px;
   padding: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: white;
+  color: green;
 }

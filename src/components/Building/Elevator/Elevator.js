@@ -4,13 +4,19 @@ import elevatorImg from "../../../assets/elevator.webp";
 
 import "./Elevator.css";
 
-const Elevator = ({ floors }) => {
+const Elevator = ({ floors, actualElevators, id }) => {
+  const elevatorFloor = actualElevators[0].floor;
+
   return (
     <ul className="elevator">
       {floors.map((i) => {
         return (
           <li key={i}>
-            <img src={elevatorImg} alt="elevator illus" />
+            {i === elevatorFloor ? (
+              <img src={elevatorImg} alt="elevator illus" />
+            ) : (
+              <p />
+            )}
           </li>
         );
       })}

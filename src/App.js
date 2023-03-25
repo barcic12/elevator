@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Building from "./components/Building/Building";
 import Controls from "./components/Controls/Controls";
@@ -8,6 +8,12 @@ import "./App.css";
 const App = () => {
   const [numberOfFloors, setNumberOfFloors] = useState(1);
   const [numberOfElevators, setNumberOfElevators] = useState(1);
+
+  const [actualElevators, setActualElevators] = useState([{ id: 0, floor: 0 }]);
+
+  useEffect(() => {
+    setActualElevators({ id: 1, floor: 1 });
+  }, [numberOfElevators]);
 
   return (
     <>
@@ -25,8 +31,13 @@ const App = () => {
         <Building
           numberOfFloors={numberOfFloors}
           numberOfElevators={numberOfElevators}
+          actualElevators={actualElevators}
         />
-        <Controls numberOfFloors={numberOfFloors} />
+        <Controls
+          numberOfFloors={numberOfFloors}
+          setActualElevators={setActualElevators}
+          actualElevators={actualElevators}
+        />
       </div>
     </>
   );
