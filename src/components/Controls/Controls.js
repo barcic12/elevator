@@ -3,21 +3,25 @@ import React, { useState } from "react";
 import "./Controls.css";
 
 const Controls = ({ numberOfFloors, setActualElevators, actualElevators }) => {
-  const [elevatorToUse, setElevatorToUse] = useState(0);
-
   const floors = [...Array(Number(numberOfFloors)).keys()];
 
   const handleCallElevator = (i) => {
-    setElevatorToUse(2); // TODO- call the closest elevator index
 
-    const elevatorsWithRemovedIndex = actualElevators.filter(
-      (elevator) => elevator.id !== 2
+    let eid = 0
+    let diff = Math.abs(i - actualElevators[0].floor)
+    
+    actualElevators.map((v)=>{
+      if(Math.abs(i - v.floor) < diff){
+        diff = Math.abs(i - v.floor)
+        eid = v.id
+      }
+    })
+
+    const newElevatorsArr = actualElevators.map(
+      (elevator) => elevator.id === eid ? { id: eid, floor: i}: elevator
     );
 
-    setActualElevators([
-      ...elevatorsWithRemovedIndex,
-      { id: elevatorToUse, floor: i },
-    ]);
+    setActualElevators(newElevatorsArr);
   };
 
   return (
