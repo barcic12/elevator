@@ -12,7 +12,13 @@ const App = () => {
   const [actualElevators, setActualElevators] = useState([{ id: 0, floor: 0 }]);
 
   useEffect(() => {
-    setActualElevators({ id: 1, floor: 1 });
+    const elevatorsToUse = [...Array(Number(numberOfElevators)).keys()].map(
+      (id) => {
+        return { id: id, floor: 0 };
+      }
+    );
+
+    setActualElevators(elevatorsToUse);
   }, [numberOfElevators]);
 
   return (

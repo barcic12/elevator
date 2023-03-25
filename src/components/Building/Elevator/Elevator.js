@@ -5,8 +5,9 @@ import elevatorImg from "../../../assets/elevator.webp";
 import "./Elevator.css";
 
 const Elevator = ({ floors, actualElevators, id }) => {
-  const elevatorFloor = actualElevators[0].floor;
+  const elevatorFloor = actualElevators[id] && actualElevators[id].floor;
 
+  console.log(actualElevators);
   return (
     <ul className="elevator">
       {floors.map((i) => {
