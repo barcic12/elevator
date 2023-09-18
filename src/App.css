@@ -1,0 +1,14 @@
+.building-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 24px auto;
+}
+
+input {
+  padding: 8px;
+  border-radius: 12px;
+  margin: 24px;
+  width: 20vw;
+  font-size: 1.25rem;
+}
